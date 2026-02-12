@@ -96,7 +96,7 @@ uploaded_file = st.file_uploader(
 if uploaded_file:
     st.success(f"Selected file: {uploaded_file.name}")
 
-    if st.button("🚀 Upload & Store", use_container_width=True):
+    if st.button("Upload & Store", use_container_width=True):
         with st.spinner("Uploading and processing file..."):
             response = requests.post(
                 "http://127.0.0.1:8000/upload_quantstudio/",
@@ -493,7 +493,7 @@ conn = psycopg2.connect(
     host="localhost",
     database="genotype_db",
     user="genouser",
-    password="Acrannolifegenomics"
+    password="yourpassword"
 )
 
 # --------------------------------------------------
@@ -655,4 +655,5 @@ styled_matrix = (
 st.dataframe(
     styled_matrix,
     width='stretch'
+
 )
